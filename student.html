@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Student Dashboard | HackForEt | CMR Technical Campus</title>
+	   <link rel="icon" type="image/jpg" href="./images/cmrlog.jpg">
         <style>
             header {
                 display: flex ;
@@ -55,6 +56,22 @@
                  
                 font-size: 1.2rem;    
             }
+		.down {
+			width : 6rem ;
+			border-radius : 1rem ;
+			padding : 0.5rem ;
+			cursor : pointer ;
+			border : 0.1rem solid rgba(73,150,205,0.8) ;
+			box-shadow : 0 0 0.7rem rgba(73,150,205,0.8) ;
+			background : rgba(73,150,205,1) ;
+			color : white ;
+			margin : 0 0 1.5rem 1.5rem ;
+			
+		}
+		.down:hover {
+			padding : 0.7rem ;
+			margin-top : 0.5rem ;
+		}
 		.droptitle {
 			padding : 0.8rem  ;
 			background : rgba(73,150,205,1) ;
@@ -113,7 +130,7 @@
         </nav>
         <main>
 		<section classname="main">
-            <h1>Study Materials</h1>
+            <h1 style="color:rgb(73,150,205);margin-bottom:2.5rem;">Study Materials</h1>
             <section class="filter">
 		 <section>
             <label>Filter By Module : </label>            
@@ -144,9 +161,11 @@
 			</section>
             <section class="softcopy" >
                 <h3 class="droptitle">Resources / Notes <b style="position:absolute;right:8%;font-size:2rem;">^</b></h3>
-                <iframe width="250" height="200" src="./assets/sih.pdf">
-                </iframe>
-			
+			<div style="display:flex;flex-direction:column">
+                <iframe width="250" height="200" src="./assets/sih.pdf"> 
+			</iframe>
+			<button class="down">Download</button>
+			</div>
             
 		
 		</section>
@@ -157,7 +176,8 @@
                 <iframe width="250" height="200" src="https://www.youtube.com/embed/wFjEZw-FF_w">
                 </iframe>
                 <iframe width="250" height="200" src="https://www.youtube.com/embed/wFjEZw-FF_w">
-
+                </iframe>
+<iframe width="250" height="200" src="https://www.youtube.com/embed/wFjEZw-FF_w">
                 </iframe>
             </section>
             <section class="weblink" >
