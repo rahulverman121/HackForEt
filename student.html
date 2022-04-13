@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            header {
+                display: flex ;
+                padding : 0 5% ;
+                top : 0 ;
+                left : 0 ;
+                width : 80% ;
+                height : 6rem ;
+                background: transparent ;
+                align-items: center ;
+                font-size: 1.5rem;
+                justify-content: center;
+                color : rgb(37, 201, 223) ;
+                color : rgb(73, 150, 205) ;
+            }
+            #logo,#hackforet {
+                width : 6rem ;
+            }
+            #head {
+                width : 70% ;
+                justify-content: center;
+                display: flex ;
+                flex-direction: column;
+               font-weight: bold ;
+                text-align: center;
+            }
+            nav {
+                margin : 2rem 0 ;
+                display :flex ;
+                width : 100% ;
+                justify-content: right ;
+            }
+            .bnn {
+                
+                padding : 0.5rem 1rem;
+                border : 0.1rem solid rgb(73, 150, 205) ;
+                background: rgb(73, 150, 205) ;
+                border-radius: 1rem ;
+                color : white ;
+                cursor : pointer ;
+            }
+            main {
+                width : 100% ;
+                display : flex ;
+                flex-direction: column;
+                justify-content: center ; 
+                align-items: center;       
+                gap: 3rem ;  
+                margin : 3% ;  
+                font-size: 1.2rem;    
+            }
+            select,input[type='search'] {
+                margin-right : 5rem ;
+                margin-left: 2.8rem;
+                width : 8rem ;
+                margin : 0 2rem ;
+                padding : 0.2rem ;
+
+            }
+            input[type='search'] {
+                width : 13rem ;
+            }
+            footer {
+                
+                width : 100% ;
+                justify-content: center;
+                align-items: center;
+                display: flex ;
+                height : 6rem ;
+                color : white ;
+                bottom: 0;
+                background: rgb(73, 150, 205) ;
+            }
+            </style>
+    </head>
+    <body>
+        <header>
+            <a href="https://cmrtc.ac.in/">
+            <img src="./images/cmritlogo.png" alt="https://cmrtc.ac.in/" id="logo">
+            </a>
+            <div id="head">CMR Technical Campus, Telangana<br/>
+                <span style="font-size: 1.3rem;color:rgb(69,67,68);font-weight:normal;">(UGC AUTONOMOUS)</span>
+            </div>
+            <a href="https://dare2compete.com/hackathon/hackforet-cmr-technical-campus-cmrctc-telangana-274696?utm_campaign=site-emails&utm_medium=d2c-automated&utm_source=registration-successful-hackforet">
+            <img src="./images/hackforet.jpg" id="hackforet" alt="https://dare2compete.com/hackathon/hackforet-cmr-technical-campus-cmrctc-telangana-274696?utm_campaign=site-emails&utm_medium=d2c-automated&utm_source=registration-successful-hackforet">
+            </a>
+        </header>
+        <nav> 
+            <button class="bnn" style="margin-right:15%;">LogOut</button>
+        </nav>
+        <main>
+            <h1>Study Materials</h1>
+            <section class="filter">
+            <label>Filter By Module : </label>            
+            <select>
+                <option>Module 1</option>
+                <option>Module 2</option>
+                <option>Module 3</option>
+                <option>Module 4</option>
+                <option>Module 5</option>
+            </select>
+            <label>Search Keyword :</label>
+            <input type="search" placeholder="Enter Keyword">
+            </section>
+            <section class="softcopy" >
+                <h3>Resources / Notes</h3>
+                <iframe width="250" height="200" src="./assets/sih.pdf">
+                </iframe>
+            </section>
+            <section class="videolink" >
+                <h3>YouTube Videos</h3>
+                <iframe width="250" height="200" src="https://www.youtube.com/embed/wFjEZw-FF_w">
+                </iframe>
+                <iframe width="250" height="200" src="https://www.youtube.com/embed/wFjEZw-FF_w">
+                </iframe>
+                <iframe width="250" height="200" src="https://www.youtube.com/embed/wFjEZw-FF_w">
+                </iframe>
+            </section>
+            <section class="weblink" >
+                <h3>Reference Links</h3>
+                <a href="https://www.w3schools.com">www.w3schools.com</a>
+            </section>
+        </main>
+        <footer>
+            &COPY; Designed & Developed By&nbsp;<i>RAHUL VERMAN, FAIZAN AHMAD & SHASHI BAVAN.</i>
+         </footer>
+    </body>
+</html>

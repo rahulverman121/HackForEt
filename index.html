@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <title>Teachers</title>
+        <style>
+            header {
+                display: flex ;
+                padding : 0 5% ;
+                top : 0 ;
+                left : 0 ;
+                width : 80% ;
+                height : 6rem ;
+                background: transparent ;
+                align-items: center ;
+                font-size: 1.5rem;
+                justify-content: center;
+                color : rgb(37, 201, 223) ;
+                color : rgb(73, 150, 205) ;
+            }
+            #logo,#hackforet {
+                width : 6rem ;
+                cursor: pointer ;
+            }
+            #head {
+                width : 70% ;
+                justify-content: center;
+                display: flex ;
+                flex-direction: column;
+               font-weight: bold ;
+                text-align: center;
+            }
+            nav {
+                margin : 2rem 0 ;
+                display :flex ;
+                width : 100% ;
+                justify-content: right ;
+            }
+            .btnn {
+                margin-right : 1.5rem ;
+                padding : 0.5rem ;
+                border : 0.1rem solid rgb(73, 150, 205) ;
+                background: transparent ;
+                border-radius: 1rem ;
+                color : rgb(73, 150, 205) ;
+                cursor : pointer ;
+            }
+            .bnn {
+                background: rgb(73, 150, 205) ;
+                color: white ;
+            }
+            main {
+                width : 100% ;
+                display : flex ;
+                justify-content: center ;
+                
+            }
+            #stdlogin,#faclogin {
+                margin : 3% 0 ;
+                padding : 3rem ;
+                border : 0.1rem groove rgb(73, 150, 205) ;
+                box-shadow: inset 0 0 0.3rem rgb(73, 150, 205);
+            }
+            form>h1 {
+                color : rgb(73, 150, 205) ;
+                margin-bottom: 1.5rem;
+            }
+            input[type='text'],input[type='password'] {
+                margin : 1rem 2rem ;
+            }
+            input[type='checkbox'] {
+                margin : 1rem 0.6rem ;
+                
+            }
+            hr {
+                border-top-color: rgb(73, 150, 205)  ;
+            }
+            footer {
+                position : absolute ;
+                width : 100% ;
+                justify-content: center;
+                align-items: center;
+                display: flex ;
+                height : 6rem ;
+                color : white ;
+                bottom: 0;
+                background: rgb(73, 150, 205) ;
+            }
+        </style>
+        
+    </head>
+    
+    <body>
+        <header>
+            <a href="https://cmrtc.ac.in/">
+            <img src="./images/cmritlogo.png" alt="https://cmrtc.ac.in/" id="logo">
+            </a>
+            <div id="head">CMR Technical Campus, Telangana<br/>
+                <span style="font-size: 1.3rem;color:rgb(69,67,68);font-weight:normal;">(UGC AUTONOMOUS)</span>
+            </div>
+            <a href="https://dare2compete.com/hackathon/hackforet-cmr-technical-campus-cmrctc-telangana-274696?utm_campaign=site-emails&utm_medium=d2c-automated&utm_source=registration-successful-hackforet">
+            <img src="./images/hackforet.jpg" id="hackforet" alt="https://dare2compete.com/hackathon/hackforet-cmr-technical-campus-cmrctc-telangana-274696?utm_campaign=site-emails&utm_medium=d2c-automated&utm_source=registration-successful-hackforet">
+            </a>
+        </header>
+        <nav>
+            <button class="btnn" id="stloginbtn">Student Login</button>
+            <button class="btnn" id="facloginbtn">Faculty Login</button>
+            <button class="btnn bnn" id="admloginbtn" style="margin-right:15%;" onclick="alert('Admin Login is disabled for now.')">Admin Login</button>
+        </nav>
+        <main>
+            <form id="stdlogin">
+            <h1>Student Login</h1><br>
+            <div>
+            <label style="height:20rem">Username : </label>
+            <input type="text" name="username">
+            </div><div>
+            <label>Password :</label>
+            <input type="password" name="password">
+            </div>
+            <div>
+            <input type="checkbox" name="rememberme"/> Remember Me
+            </div>
+            <hr></hr>
+            <center><input type="submit" value="Login" class="btnn bnn" style="padding:0.5rem 1rem;margin-top:3rem">
+            </center>
+            </form>
+            <form id="faclogin">
+                <h1>Faculty Login</h1><br>
+                <div>
+                <label style="height:20rem">Username : </label>
+                <input type="text" name="username">
+                </div><div>
+                <label>Password :</label>
+                <input type="password" name="password">
+                </div>
+                <div>
+                <input type="checkbox" name="rememberme"/> Remember Me
+                </div>
+                <hr></hr>
+                <center><input type="submit" value="Login" class="btnn bnn" style="padding:0.5rem 1rem;margin-top:3rem">
+                </center>
+                </form>
+                <script>
+                    $("#faclogin").hide();
+                </script>
+        </main>
+        <script>
+            $("#stloginbtn").click( function() {
+                $("#faclogin").hide();
+                $("#stdlogin").show();
+            });
+        </script>
+        <script>
+            $("#facloginbtn").click( function() {
+                $("#stdlogin").hide();
+                $("#faclogin").show();
+            });
+        </script>
+        <footer>
+           &COPY; Designed & Developed By&nbsp;<i>RAHUL VERMAN, FAIZAN AHMAD & SHASHI BAVAN</i>
+        </footer>
+    </body>
+</html>
