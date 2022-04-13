@@ -38,6 +38,7 @@
                 justify-content: right ;
             }
             .btnn {
+		    box-shadow : 0 0 0.7rem rgba(73,150,205,0.8) ;
                 margin-right : 1.5rem ;
                 padding : 0.5rem ;
                 border : 0.1rem solid rgb(73, 150, 205) ;
@@ -110,7 +111,7 @@
             <button class="btnn bnn" id="admloginbtn" style="margin-right:15%;" onclick="alert('Admin Login is disabled for now.')">Admin Login</button>
         </nav>
         <main>
-            <form id="stdlogin">
+            <form id="stdlogin" action="student.html" method="post">
             <h1>Student Login</h1><br>
             <div>
             <label style="height:20rem">Reg. No. : </label>
@@ -126,7 +127,7 @@
             <center><input type="submit" value="Login" class="btnn bnn" style="padding:0.5rem 1rem;margin-top:3rem">
             </center>
             </form>
-            <form id="faclogin">
+            <form id="faclogin" action="teacher.html" method="post">
                 <h1>Faculty Login</h1><br>
                 <div>
                 <label style="height:20rem">Username : </label>
