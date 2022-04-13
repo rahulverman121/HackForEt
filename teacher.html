@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title>Teacher Dashboard | HackForEt | CMR Technical Campus</title>
         <style>
             header {
                 display: flex ;
@@ -50,6 +50,7 @@
             #addmaterial {
                 margin : 1% 0 ;
                 padding : 3rem ;
+		    border-radius : 1rem/1rem;
                 border : 0.1rem groove rgb(73, 150, 205) ;
                 box-shadow: inset 0 0 0.3rem rgb(73, 150, 205);
             }
@@ -107,6 +108,7 @@
                 <div>
                 <label>Select Year : </label>
                 <select>
+			  <option hidden>Select Year</option>
                     <option>1st Year</option>
                     <option>2nd Year</option>
                     <option>3rd Year</option>
@@ -114,7 +116,8 @@
                 </select>
                 
                 <label>Select Module : </label>
-                <select>
+                <select style="margin-left: 3.8rem;">
+			  <option hidden>Select Module</option>
                     <option>Module 1</option>
                     <option>Module 2</option>
                     <option>Module 3</option>

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title>Student Dashboard | HackForEt | CMR Technical Campus</title>
         <style>
             header {
                 display: flex ;
                 padding : 0 5% ;
                 top : 0 ;
                 left : 0 ;
-                width : 80% ;
+                width : 90% ;
                 height : 6rem ;
                 background: transparent ;
                 align-items: center ;
@@ -16,6 +16,7 @@
                 justify-content: center;
                 color : rgb(37, 201, 223) ;
                 color : rgb(73, 150, 205) ;
+			
             }
             #logo,#hackforet {
                 width : 6rem ;
@@ -29,6 +30,7 @@
                 text-align: center;
             }
             nav {
+			 
                 margin : 2rem 0 ;
                 display :flex ;
                 width : 100% ;
@@ -50,22 +52,39 @@
                 justify-content: center ; 
                 align-items: center;       
                 gap: 3rem ;  
-                margin : 3% ;  
+                 
                 font-size: 1.2rem;    
             }
+		.droptitle {
+			padding : 0.8rem  ;
+			background : rgba(73,150,205,1) ;
+			color : white ;
+		
+		}
+		.filter {
+			border : 0.1rem groove black  ;
+			padding : 1rem 2rem;
+			border-radius : 1rem / 1rem;
+			box-shadow : inset 0 0 0.7rem rgba(0,0,0,0.6) ;
+			margin: 3rem 0 ;
+		}
+		iframe {
+			margin : 1.5rem ;
+		}
             select,input[type='search'] {
-                margin-right : 5rem ;
-                margin-left: 2.8rem;
+                
+                margin-left: 2.8rem ;
                 width : 8rem ;
-                margin : 0 2rem ;
+                margin : 1rem 2rem ;
                 padding : 0.2rem ;
+		     margin-right : 5rem ;
 
             }
             input[type='search'] {
                 width : 13rem ;
             }
             footer {
-                
+                margin-top : 2rem ;
                 width : 100% ;
                 justify-content: center;
                 align-items: center;
@@ -93,37 +112,59 @@
             <button class="bnn" style="margin-right:15%;">LogOut</button>
         </nav>
         <main>
+		<section classname="main">
             <h1>Study Materials</h1>
             <section class="filter">
+		 <section>
             <label>Filter By Module : </label>            
             <select>
+                <option hidden>Select Module</option>
                 <option>Module 1</option>
                 <option>Module 2</option>
                 <option>Module 3</option>
                 <option>Module 4</option>
                 <option>Module 5</option>
+                <option>All</option>
             </select>
             <label>Search Keyword :</label>
             <input type="search" placeholder="Enter Keyword">
+		 
             </section>
+		
+		<section>
+			<label>Filter By Content : </label>
+			<select style="width:10rem">
+				<option hidden>Select Content Type</option>
+				<option>Notes / Resources</option>
+				<option>Video Link</option>
+				<option>Reference Web Link</option>
+				<option>All</option>
+			</select>
+			</section>
+			</section>
             <section class="softcopy" >
-                <h3>Resources / Notes</h3>
+                <h3 class="droptitle">Resources / Notes <b style="position:absolute;right:8%;font-size:2rem;">^</b></h3>
                 <iframe width="250" height="200" src="./assets/sih.pdf">
                 </iframe>
-            </section>
+			
+            
+		
+		</section>
             <section class="videolink" >
-                <h3>YouTube Videos</h3>
+                <h3 class="droptitle">YouTube Videos</h3>
                 <iframe width="250" height="200" src="https://www.youtube.com/embed/wFjEZw-FF_w">
                 </iframe>
                 <iframe width="250" height="200" src="https://www.youtube.com/embed/wFjEZw-FF_w">
                 </iframe>
                 <iframe width="250" height="200" src="https://www.youtube.com/embed/wFjEZw-FF_w">
+
                 </iframe>
             </section>
             <section class="weblink" >
-                <h3>Reference Links</h3>
+                <h3 class="droptitle">Reference Links</h3>
                 <a href="https://www.w3schools.com">www.w3schools.com</a>
             </section>
+		</section>
         </main>
         <footer>
             &COPY; Designed & Developed By&nbsp;<i>RAHUL VERMAN, FAIZAN AHMAD & SHASHI BAVAN.</i>
