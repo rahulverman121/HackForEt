@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Teacher Dashboard | HackForEt | CMR Technical Campus</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	  <link rel="icon" type="image/jpg" href="./images/cmrlog.jpg">
         <style>
             header {
@@ -78,7 +79,7 @@
                 border-top-color: rgb(73, 150, 205)  ;
             }
             footer {
-                
+                margin-top : 3rem ;
                 width : 100% ;
                 justify-content: center;
                 align-items: center;
@@ -91,6 +92,7 @@
             </style>
     </head>
     <body>
+	
         <header>
             <a href="https://cmrtc.ac.in/">
             <img src="./images/cmritlogo.png" alt="https://cmrtc.ac.in/" id="logo">
@@ -99,7 +101,7 @@
                 <span style="font-size: 1.3rem;color:rgb(69,67,68);font-weight:normal;">(UGC AUTONOMOUS)</span>
             </div>
             <a href="https://dare2compete.com/hackathon/hackforet-cmr-technical-campus-cmrctc-telangana-274696?utm_campaign=site-emails&utm_medium=d2c-automated&utm_source=registration-successful-hackforet">
-            <img src="./images/hackforet.jpg" id="hackforet" alt="https://dare2compete.com/hackathon/hackforet-cmr-technical-campus-cmrctc-telangana-274696?utm_campaign=site-emails&utm_medium=d2c-automated&utm_source=registration-successful-hackforet">
+            <img src="./images/hackforet.jpg" id="hackforet" alt="HackForEt">
             </a>
         </header>
         <nav>
@@ -107,20 +109,24 @@
             <button class="bnn" style="margin-right:15%;">LogOut&nbsp<img src="./images/logout.png" width="18rem"></button>
         </nav>
         <main>
-            <form id="addmaterial">
+            <form action="upload.php" method="post" enctype="multipart/form-data" id="addmaterial">
                 <h1>Upload Materials</h1>
                 <div>
                 <label>Select Year : </label>
-                <select>
-			  <option hidden>Select Year</option>
-                    <option>1st Year</option>
-                    <option>2nd Year</option>
-                    <option>3rd Year</option>
-                    <option>4th Year</option>
+                <select name="sem">
+			  <option hidden>Select Semester</option>
+                    <option>1st Semester</option>
+                    <option>2nd Semester</option>
+                    <option>3rd Semester</option>
+                    <option>4th Semester</option>
+                    <option>1st Semester</option>
+                    <option>2nd Semester</option>
+                    <option>3rd Semester</option>
+                    <option>4th Semester</option>
                 </select>
                 
                 <label>Select Subject : </label>
-                <select style="margin-left: 3.8rem;">
+                <select style="margin-left: 3.8rem;" name="subject">
 			  <option hidden>Select Subject :</option>
                	 <option>Cryptography</option>
                 	<option>Data Structure</option>
@@ -133,7 +139,7 @@
                 
                 
                 <label>Select Module : </label>
-                <select style="margin-left: 1.8rem;">
+                <select style="margin-left: 1.8rem;" name="module">
 			  <option hidden>Select Module</option>
                     <option>Module 1</option>
                     <option>Module 2</option>
@@ -144,14 +150,15 @@
                 </div>
                 <div>
                     <label>YouTube Link</label>
-                    <input type="url" name="urllink" placeholder="Youtube Link">
+                    <input type="url" name="youtubelink" placeholder="Youtube Link">
                     <label>Add Reference Link</label>
-                    <input type="url" name="urllink" placeholder="Reference Web Link">
+                    <input type="url" name="reflink" placeholder="Reference Web Link">
                 </div>
                 <label>Select File : </label>
-                    <input type="file">
+                    <input type="file" name="notes">
+		    <div id="msg"></div>
                 <hr></hr>
-                <center><input type="submit" value="Submit" class="bnn">
+                <center><button class="bnn" id="register">Upload</button>
                 </center>  
             </form>
         </main>

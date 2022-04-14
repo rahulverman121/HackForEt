@@ -79,11 +79,16 @@
                 margin : 1rem 0.6rem ;
                 
             }
+            select {
+                margin : 1rem 2rem;
+       
+                width : 8rem ;
+            }
             hr {
                 border-top-color: rgb(73, 150, 205)  ;
             }
             footer {
-               
+                margin-top : 3rem ;
                 width : 100% ;
                 justify-content: center;
                 align-items: center;
@@ -93,11 +98,13 @@
                 bottom: 0;
                 background: rgb(73, 150, 205) ;
             }
+		
         </style>
         
     </head>
     
     <body>
+<vr style="margin:0 3%;position:absolute;height:45%;border:1rem solid rgb(73,150,205);"></vr>
         <header>
             <a href="https://cmrtc.ac.in/">
             <img src="./images/cmritlogo.png" alt="https://cmrtc.ac.in/" id="logo">
@@ -115,11 +122,11 @@
             <button class="btnn bnn" id="admloginbtn" style="margin-right:15%;" onclick="alert('Admin Login is disabled for now.')">Admin Login&nbsp<img src="./images/profile.jpg" width="16rem"></button>
         </nav>
         <main>
-            <form id="stdlogin" action="student.html" method="post">
+            <form id="stdlogin" action="studentlogin.php" method="post">
             <h1>Student Login</h1><br>
             <div>
             <label style="height:20rem">Reg. No. : </label>
-            <input type="text" name=regno" placeholder="Registration No.">
+            <input type="text" name="regno" placeholder="Registration No.">
             </div><div>
             <label>Password :</label>
             <input type="password" name="password" placeholder="Password">
@@ -132,7 +139,7 @@
             </center>
 		<div>New User! <a style="text-decoration:underline;color:blue;cursor:pointer;" onclick="$('#stdlogin').hide();$('#stdsignup').slideDown();">Register</a></div>
             </form>
-            <form id="stdsignup" action="student.html" method="post">
+            <form id="stdsignup" action="studentreg.php" method="post">
             <h1>Student Registration</h1><br>
             <div>
             <label style="height:20rem">Name : </label>
@@ -142,6 +149,20 @@
             <div>
             <label style="height:20rem">Email : </label>
             <input type="email" name="email" placeholder="Email">
+            </div>
+            <div>
+            <label style="height:20rem">Semster : </label>
+              <select name="sem">
+			  <option hidden>Select Semester</option>
+                    <option>1st Semester</option>
+                    <option>2nd Semester</option>
+                    <option>3rd Semester</option>
+                    <option>4th Semester</option>
+                    <option>1st Semester</option>
+                    <option>2nd Semester</option>
+                    <option>3rd Semester</option>
+                    <option>4th Semester</option>
+                </select>
             </div>
             <div>
             <label style="height:20rem">Reg. No. : </label>
@@ -158,7 +179,7 @@
 		<div><a style="text-decoration:underline;color:blue;cursor:pointer;" onclick="$('#stdsignup').hide();$('#stdlogin').slideDown();">Login</a>&nbspExisting Account</div>
             </form>
 
-            <form id="faclogin" action="teacher.html" method="post">
+            <form id="faclogin" action="facultylogin.php" method="post">
                 <h1>Faculty Login</h1><br>
                 <div>
                 <label style="height:20rem">Emp Id : </label>
@@ -176,7 +197,7 @@
 <div>New User! <a style="text-decoration:underline;color:blue;cursor:pointer;" onclick="$('#faclogin').hide();$('#facsignup').slideDown();">Register</a></div>
                 </form>
 			</form>
-            <form id="facsignup" action="teacher.html" method="post">
+            <form id="facsignup" action="facultyreg.php" method="post">
             <h1>Faculty Registration</h1><br>
             <div>
             <label style="height:20rem">Name : </label>
@@ -221,5 +242,6 @@
         <footer>
            &COPY; Designed & Developed By&nbsp;<i>RAHUL VERMAN, FAIZAN AHMAD & SHASHI BAVAN</i>
         </footer>
+		
     </body>
 </html>
