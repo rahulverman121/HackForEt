@@ -48,6 +48,8 @@
                 border-radius: 1rem ;
                 color : white ;
                 cursor : pointer ;
+		    display : flex ;
+		    align-items : center ;
             } 
             #addmaterial {
                 margin : 1% 0 ;
@@ -76,7 +78,7 @@
                 border-top-color: rgb(73, 150, 205)  ;
             }
             footer {
-                position : absolute ;
+                
                 width : 100% ;
                 justify-content: center;
                 align-items: center;
@@ -102,7 +104,7 @@
         </header>
         <nav>
             
-            <button class="bnn" style="margin-right:15%;">LogOut</button>
+            <button class="bnn" style="margin-right:15%;">LogOut&nbsp<img src="./images/logout.png" width="18rem"></button>
         </nav>
         <main>
             <form id="addmaterial">
@@ -117,8 +119,21 @@
                     <option>4th Year</option>
                 </select>
                 
-                <label>Select Module : </label>
+                <label>Select Subject : </label>
                 <select style="margin-left: 3.8rem;">
+			  <option hidden>Select Subject :</option>
+               	 <option>Cryptography</option>
+                	<option>Data Structure</option>
+                	<option>Oops Programming</option>
+                	<option>Web Development</option>
+                	<option>Network Security</option>
+                </select>
+                </div>
+		    <div>
+                
+                
+                <label>Select Module : </label>
+                <select style="margin-left: 1.8rem;">
 			  <option hidden>Select Module</option>
                     <option>Module 1</option>
                     <option>Module 2</option>
@@ -129,9 +144,9 @@
                 </div>
                 <div>
                     <label>YouTube Link</label>
-                    <input type="url" name="urllink">
+                    <input type="url" name="urllink" placeholder="Youtube Link">
                     <label>Add Reference Link</label>
-                    <input type="url" name="urllink">
+                    <input type="url" name="urllink" placeholder="Reference Web Link">
                 </div>
                 <label>Select File : </label>
                     <input type="file">

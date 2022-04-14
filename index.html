@@ -50,6 +50,8 @@
             .bnn {
                 background: rgb(73, 150, 205) ;
                 color: white ;
+			  align-items : center ;
+			  display : flex ;
             }
             main {
                 width : 100% ;
@@ -57,7 +59,7 @@
                 justify-content: center ;
                 
             }
-            #stdlogin,#faclogin {
+            #stdlogin,#faclogin,#stdsignup,#facsignup {
 		    border-radius : 1rem/1rem ;
                 margin : 3% 0 ;
                 padding : 3rem ;
@@ -68,8 +70,10 @@
                 color : rgb(73, 150, 205) ;
                 margin-bottom: 1.5rem;
             }
-            input[type='text'],input[type='password'] {
+            input {
                 margin : 1rem 2rem ;
+		    padding : 0.2rem ;
+		    
             }
             input[type='checkbox'] {
                 margin : 1rem 0.6rem ;
@@ -79,7 +83,7 @@
                 border-top-color: rgb(73, 150, 205)  ;
             }
             footer {
-                position : absolute ;
+               
                 width : 100% ;
                 justify-content: center;
                 align-items: center;
@@ -102,23 +106,23 @@
                 <span style="font-size: 1.3rem;color:rgb(69,67,68);font-weight:normal;">(UGC AUTONOMOUS)</span>
             </div>
             <a href="https://dare2compete.com/hackathon/hackforet-cmr-technical-campus-cmrctc-telangana-274696?utm_campaign=site-emails&utm_medium=d2c-automated&utm_source=registration-successful-hackforet">
-            <img src="./images/hackforet.jpg" id="hackforet" alt="https://dare2compete.com/hackathon/hackforet-cmr-technical-campus-cmrctc-telangana-274696?utm_campaign=site-emails&utm_medium=d2c-automated&utm_source=registration-successful-hackforet">
+            <img src="./images/hackforet.jpg" id="hackforet" alt="HackForEt">
             </a>
         </header>
         <nav>
             <button class="btnn" id="stloginbtn">Student Login</button>
             <button class="btnn" id="facloginbtn">Faculty Login</button>
-            <button class="btnn bnn" id="admloginbtn" style="margin-right:15%;" onclick="alert('Admin Login is disabled for now.')">Admin Login</button>
+            <button class="btnn bnn" id="admloginbtn" style="margin-right:15%;" onclick="alert('Admin Login is disabled for now.')">Admin Login&nbsp<img src="./images/profile.jpg" width="16rem"></button>
         </nav>
         <main>
             <form id="stdlogin" action="student.html" method="post">
             <h1>Student Login</h1><br>
             <div>
             <label style="height:20rem">Reg. No. : </label>
-            <input type="text" name="username">
+            <input type="text" name=regno" placeholder="Registration No.">
             </div><div>
             <label>Password :</label>
-            <input type="password" name="password">
+            <input type="password" name="password" placeholder="Password">
             </div>
             <div>
             <input type="checkbox" name="rememberme"/> Remember Me
@@ -126,15 +130,42 @@
             <hr></hr>
             <center><input type="submit" value="Login" class="btnn bnn" style="padding:0.5rem 1rem;margin-top:3rem">
             </center>
+		<div>New User! <a style="text-decoration:underline;color:blue;cursor:pointer;" onclick="$('#stdlogin').hide();$('#stdsignup').slideDown();">Register</a></div>
             </form>
+            <form id="stdsignup" action="student.html" method="post">
+            <h1>Student Registration</h1><br>
+            <div>
+            <label style="height:20rem">Name : </label>
+            <input type="text" name="fname" placeholder="First Name">
+            <input type="text" name="lname" placeholder="Last Name">
+            </div>
+            <div>
+            <label style="height:20rem">Email : </label>
+            <input type="email" name="email" placeholder="Email">
+            </div>
+            <div>
+            <label style="height:20rem">Reg. No. : </label>
+            <input type="text" name="regno" placeholder="Registration No.">
+            </div>
+		<div>
+            <label>Password :</label>
+            <input type="password" name="password" placeholder="Password">
+            </div>
+            
+            <hr></hr>
+            <center><input type="submit" value="Register" class="btnn bnn" style="padding:0.5rem 1rem;margin-top:3rem">
+            </center>
+		<div><a style="text-decoration:underline;color:blue;cursor:pointer;" onclick="$('#stdsignup').hide();$('#stdlogin').slideDown();">Login</a>&nbspExisting Account</div>
+            </form>
+
             <form id="faclogin" action="teacher.html" method="post">
                 <h1>Faculty Login</h1><br>
                 <div>
-                <label style="height:20rem">Username : </label>
-                <input type="text" name="username">
+                <label style="height:20rem">Emp Id : </label>
+                <input type="text" name="empid" placeholder="Employee Id">
                 </div><div>
                 <label>Password :</label>
-                <input type="password" name="password">
+                <input type="password" name="password" placeholder="Password">
                 </div>
                 <div>
                 <input type="checkbox" name="rememberme"/> Remember Me
@@ -142,21 +173,49 @@
                 <hr></hr>
                 <center><input type="submit" value="Login" class="btnn bnn" style="padding:0.5rem 1rem;margin-top:3rem">
                 </center>
+<div>New User! <a style="text-decoration:underline;color:blue;cursor:pointer;" onclick="$('#faclogin').hide();$('#facsignup').slideDown();">Register</a></div>
                 </form>
+			</form>
+            <form id="facsignup" action="teacher.html" method="post">
+            <h1>Faculty Registration</h1><br>
+            <div>
+            <label style="height:20rem">Name : </label>
+            <input type="text" name="fname" placeholder="First Name">
+            <input type="text" name="lname" placeholder="Last Name">
+            </div>
+            <div>
+            <label style="height:20rem">Email : </label>
+            <input type="email" name="email" placeholder="Email">
+            </div>
+            <div>
+            <label style="height:20rem">Emp id : </label>
+            <input type="text" name="empid" placeholder="Employee Id.">
+            </div>
+		<div>
+            <label>Password :</label>
+            <input type="password" name="password" placeholder="Password">
+            </div>
+            
+            <hr></hr>
+            <center><input type="submit" value="Register" class="btnn bnn" style="padding:0.5rem 1rem;margin-top:3rem">
+            </center>
+		<div><a style="text-decoration:underline;color:blue;cursor:pointer;" onclick="$('#facsignup').hide();$('#faclogin').slideDown();">Login</a>&nbspExisting Account</div>
+            </form>
+
                 <script>
-                    $("#faclogin").hide();
+                    $("#faclogin,#stdsignup,#facsignup").hide();
                 </script>
         </main>
         <script>
             $("#stloginbtn").click( function() {
-                $("#faclogin").hide();
-                $("#stdlogin").show();
+                $("#faclogin,#facsignup,#stdsignup").hide();
+                $("#stdlogin").slideDown();
             });
         </script>
         <script>
             $("#facloginbtn").click( function() {
-                $("#stdlogin").hide();
-                $("#faclogin").show();
+                $("#stdlogin,#stdsignup,#facsignup").hide();
+                $("#faclogin").slideDown();
             });
         </script>
         <footer>

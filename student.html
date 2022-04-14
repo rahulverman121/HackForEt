@@ -3,6 +3,7 @@
     <head>
         <title>Student Dashboard | HackForEt | CMR Technical Campus</title>
 	   <link rel="icon" type="image/jpg" href="./images/cmrlog.jpg">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <style>
             header {
                 display: flex ;
@@ -45,6 +46,8 @@
                 border-radius: 1rem ;
                 color : white ;
                 cursor : pointer ;
+		    display : flex ;
+		    align-items : center ;
             }
             main {
                 width : 100% ;
@@ -76,7 +79,16 @@
 			padding : 0.8rem  ;
 			background : rgba(73,150,205,1) ;
 			color : white ;
-		
+			display : flex ;
+			cursor : pointer ;
+		}
+		.arrow {
+			width : 1.5rem ;
+			
+		}
+		.softcopy {
+			display : flex ;
+			flex-wrap : wrap ; 
 		}
 		.filter {
 			border : 0.1rem groove black  ;
@@ -87,6 +99,7 @@
 		}
 		iframe {
 			margin : 1.5rem ;
+			cursor : pointer ;
 		}
             select,input[type='search'] {
                 
@@ -94,12 +107,16 @@
                 width : 8rem ;
                 margin : 1rem 2rem ;
                 padding : 0.2rem ;
-		     margin-right : 5rem ;
+		     margin-right : 3.5rem ;
 
             }
             input[type='search'] {
                 width : 13rem ;
+		    margin-right : 0 ;
             }
+		.ref {
+			margin : 0 1.5rem ;
+		}
             footer {
                 margin-top : 2rem ;
                 width : 100% ;
@@ -122,16 +139,42 @@
                 <span style="font-size: 1.3rem;color:rgb(69,67,68);font-weight:normal;">(UGC AUTONOMOUS)</span>
             </div>
             <a href="https://dare2compete.com/hackathon/hackforet-cmr-technical-campus-cmrctc-telangana-274696?utm_campaign=site-emails&utm_medium=d2c-automated&utm_source=registration-successful-hackforet">
-            <img src="./images/hackforet.jpg" id="hackforet" alt="https://dare2compete.com/hackathon/hackforet-cmr-technical-campus-cmrctc-telangana-274696?utm_campaign=site-emails&utm_medium=d2c-automated&utm_source=registration-successful-hackforet">
+            <img src="./images/hackforet.jpg" id="hackforet" alt="HackForEt">
             </a>
         </header>
         <nav> 
-            <button class="bnn" style="margin-right:15%;">LogOut</button>
+            <button class="bnn" style="margin-right:15%;">LogOut&nbsp<img src="./images/logout.png" width="18rem"></button>
         </nav>
         <main>
 		<section classname="main">
             <h1 style="color:rgb(73,150,205);margin-bottom:2.5rem;">Study Materials</h1>
             <section class="filter">
+<section style="display:flex">
+		<section>
+		<label>Filter By Subject : </label>
+            <select>
+                <option hidden>Select Subject</option>
+                <option>Cryptography</option>
+                <option>Data Structure</option>
+                <option>Oops Programming</option>
+                <option>Web Development</option>
+                <option>Network Security</option>
+                <option>All</option>
+            </select>
+		</section>
+
+		<section>
+			<label>Filter By Content : </label>
+			<select style="width:10rem">
+				<option hidden>Select Content Type</option>
+				<option>Notes / Resources</option>
+				<option>Video Link</option>
+				<option>Reference Web Link</option>
+				<option>All</option>
+			</select>
+			</section>
+			</section>
+
 		 <section>
             <label>Filter By Module : </label>            
             <select>
@@ -145,22 +188,23 @@
             </select>
             <label>Search Keyword :</label>
             <input type="search" placeholder="Enter Keyword">
-		 
             </section>
 		
-		<section>
-			<label>Filter By Content : </label>
-			<select style="width:10rem">
-				<option hidden>Select Content Type</option>
-				<option>Notes / Resources</option>
-				<option>Video Link</option>
-				<option>Reference Web Link</option>
-				<option>All</option>
-			</select>
+		
 			</section>
-			</section>
-            <section class="softcopy" >
-                <h3 class="droptitle">Resources / Notes <b style="position:absolute;right:8%;font-size:2rem;">^</b></h3>
+            
+                <h3 class="droptitle" onclick="$('.arrres').css('transform','rotate(180deg)');$('.softcopy').slideToggle()"><span style="flex:90%">Resources / Notes </span><img src="./images/arrow.png" class="arrow arrres"> </h3>
+			<section class="softcopy" >
+			<div style="display:flex;flex-direction:column">
+                <iframe width="250" height="200" src="./assets/sih.pdf"> 
+			</iframe>
+			<div style="display:flex;margin-left:1rem">
+			<a href="./assets/sih.pdf" target="_blank" download><button class="down">Download</button>
+			</a>
+			<a href="./assets/sih.pdf" target="_blank"><button class="down">View</button>
+			</a>
+			</div>
+			</div>
 			<div style="display:flex;flex-direction:column">
                 <iframe width="250" height="200" src="./assets/sih.pdf"> 
 			</iframe>
@@ -172,10 +216,31 @@
 			</div>
 			</div>
             
+
+<div style="display:flex;flex-direction:column">
+                <iframe width="250" height="200" src="./assets/sih.pdf"> 
+			</iframe>
+			<div style="display:flex;margin-left:1rem">
+			<a href="./assets/sih.pdf" target="_blank" download><button class="down">Download</button>
+			</a>
+			<a href="./assets/sih.pdf" target="_blank"><button class="down">View</button>
+			</a>
+			</div>
+			</div>
+			<div style="display:flex;flex-direction:column">
+                <iframe width="250" height="200" src="./assets/sih.pdf"> 
+			</iframe>
+			<div style="display:flex;margin-left:1rem">
+			<a href="./assets/sih.pdf" target="_blank" download><button class="down">Download</button>
+			</a>
+			<a href="./assets/sih.pdf" target="_blank"><button class="down">View</button>
+			</a>
+			</div>
+			</div>
 		
 		</section>
+                <h3 class="droptitle" onclick="$('.arryou').css('transform','rotate(180deg)');$('.videolink').slideToggle()"><span style="flex:90%">YouTube Videos </span><img src="./images/arrow.png" class="arrow arryou"></h3>
             <section class="videolink" >
-                <h3 class="droptitle">YouTube Videos</h3>
                 <iframe width="250" height="200" src="https://www.youtube.com/embed/wFjEZw-FF_w">
                 </iframe>
                 <iframe width="250" height="200" src="https://www.youtube.com/embed/wFjEZw-FF_w">
@@ -185,9 +250,10 @@
 <iframe width="250" height="200" src="https://www.youtube.com/embed/wFjEZw-FF_w">
                 </iframe>
             </section>
+                <h3 class="droptitle" onclick="$('.arrdrop').css('transform','rotate(180deg)');$('.weblink').slideToggle()"><span style="flex:90%">Reference Links</span><img src="./images/arrow.png" class="arrow arrdrop"></h3>
             <section class="weblink" >
-                <h3 class="droptitle">Reference Links</h3>
-                <a href="https://www.w3schools.com">www.w3schools.com</a>
+		    
+                <a href="https://www.w3schools.com" target="_blank" class="ref"><img src="./images/link.png" width="16rem">www.w3schools.com</a>
             </section>
 		</section>
         </main>
