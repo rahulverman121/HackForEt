@@ -23,6 +23,6 @@
             echo "<h1> Login failed. Invalid username or password.</h1>";  
         }
     if(isset($_SESSION["regno"])) {
-    header("Location:student.html");
+    header("Location:student.php");
     } 
 ?>  

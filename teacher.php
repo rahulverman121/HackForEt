@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -34,6 +37,7 @@
                 margin : 2rem 0 ;
                 display :flex ;
                 width : 100% ;
+			align-items : center ;
                 justify-content: right ;
             }
             main {
@@ -92,6 +96,9 @@
             </style>
     </head>
     <body>
+<?php 
+if($_SESSION["empid"]) {
+?>
 	
         <header>
             <a href="https://cmrtc.ac.in/">
@@ -105,8 +112,11 @@
             </a>
         </header>
         <nav>
-            
-            <button class="bnn" style="margin-right:15%;">LogOut&nbsp<img src="./images/logout.png" width="18rem"></button>
+            		<?php
+		echo 'Welcome '.$_SESSION["fname"].' '; 
+		 ?>
+		<a href="logout.php" style="margin-right:15%;margin-left:2%">
+            <button class="bnn" style="margin-right:15%;margin-left:2%">LogOut&nbsp<img src="./images/logout.png" width="18rem"></button></a>
         </nav>
         <main>
             <form action="upload.php" method="post" enctype="multipart/form-data" id="addmaterial">
@@ -165,5 +175,10 @@
         <footer>
             &COPY; Designed & Developed By&nbsp;<i>RAHUL VERMAN, FAIZAN AHMAD & SHASHI BAVAN.</i>
          </footer>
+<?php
+}
+else
+echo "Access Denied. Login";
+?>
     </body>
 </html>

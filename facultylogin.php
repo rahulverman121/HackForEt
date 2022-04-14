@@ -20,9 +20,10 @@
 		$_SESSION["fname"] = $row['fname'];
         }  
         else{  
-            echo "<h1> Login failed. Invalid username or password.</h1>";  
+            echo "<h1> Login failed. Invalid username or password.</h1>";
+		  
         }
     if(isset($_SESSION["empid"])) {
-    header("Location:teacher.html");
+    header("Location:teacher.php");
     } 
 ?>  

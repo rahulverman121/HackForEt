@@ -1,3 +1,10 @@
+<?php 
+    session_start();   
+include('connection.php');
+$sql="Select * from materials";
+$result = mysqli_query($con,$sql);
+
+ ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -37,6 +44,7 @@
                 display :flex ;
                 width : 100% ;
                 justify-content: right ;
+		    align-items : center ;
             }
             .bnn {
                 box-shadow : 0 0 0.7rem rgba(73,150,205,0.8) ;
@@ -115,7 +123,7 @@
 		    margin-right : 0 ;
             }
 		.ref {
-			margin : 0 1.5rem ;
+			margin : 0.8rem 1.5rem ;
 		}
             footer {
                 margin-top : 3rem ;
@@ -131,7 +139,9 @@
             </style>
     </head>
     <body>
-
+<?php 
+if($_SESSION["regno"]) {
+?>
         <header>
             <a href="https://cmrtc.ac.in/">
             <img src="./images/cmritlogo.png" alt="https://cmrtc.ac.in/" id="logo">
@@ -144,7 +154,11 @@
             </a>
         </header>
         <nav> 
-            <button class="bnn" style="margin-right:15%;">LogOut&nbsp<img src="./images/logout.png" width="18rem"></button>
+		<?php
+		echo 'Welcome '.$_SESSION["fname"].'  '; 
+		 ?>
+	<a href="logout.php" style="margin-right:15%;margin-left:3%,text-decoration:none;">
+            <button class="bnn" style="margin-right:15%;margin-left:2%">LogOut&nbsp<img src="./images/logout.png" width="18rem"></button></a>
         </nav>
         <main>
 		<section classname="main">
@@ -152,8 +166,8 @@
             <section class="filter">
 <section style="display:flex">
 		<section>
-		<label>Filter By Subject : </label>
-            <select>
+		<label >Filter By Subject : </label>
+            <select id="subject" onchange="filterbysub()">
                 <option hidden>Select Subject</option>
                 <option>Cryptography</option>
                 <option>Data Structure</option>
@@ -164,6 +178,15 @@
             </select>
 		</section>
 			
+<script>
+	function filterbysub() {
+			var sub = "."+$("#subject").val().split(" ")[0];
+			var mod = "."+$("#module").val().split(" ")[1];
+			$(".Module").hide();
+			$(sub).slideDown();
+		}
+</script>
+		<div id="msgg"></div>
 		<section>
 			<label >Filter By Content : </label>
 			<select style="width:10rem" onchange="filterbycontent()" id="content">
@@ -175,10 +198,10 @@
 			</select>
 			</section>
 			</section>
-
 		<script>
 			function filterbycontent() {
 			var cont = $("#content").val();
+				alert("hello");
 				if(cont=='Notes / Resources') {
 						$(".weblink,.videolink,.weblinktitle,.videolinktitle").slideUp();
 						$(".softcopy,.softcopytitle").slideDown();						
@@ -195,10 +218,10 @@
 				}
 			}			
 		</script>
+
 		 <section>
-		<div id="msgg"></div>
             <label>Filter By Module : </label>            
-            <select>
+            <select id="module" onchange="filterbymodule()">
                 <option hidden>Select Module</option>
                 <option>Module 1</option>
                 <option>Module 2</option>
@@ -210,76 +233,76 @@
             <label>Search Keyword :</label>
             <input type="search" placeholder="Enter Keyword">
             </section>
-		
-		
-			</section>
-            
+		</section>
+  <script>
+	function filterbymodule() {
+			var sub = "."+$("#subject").val().split(" ")[0];
+			var mod = "."+$("#module").val().split(" ")[1];
+			$(".Module").hide();
+			$(mod).slideDown();
+			
+		}
+</script>          
+
+
                 <h3 class="droptitle softcopytitle" onclick="$('.arrres').css('transform','rotate(180deg)');$('.softcopy').slideToggle()"><span style="flex:90%">Resources / Notes </span><img src="./images/arrow.png" class="arrow arrres"> </h3>
 			<section class="softcopy" >
-			<div style="display:flex;flex-direction:column">
-                <iframe width="250" height="200" src="./assets/sih.pdf"> 
+			
+		<?php
+			
+		while($row= mysqli_fetch_assoc($result)) {
+			
+			echo '
+			<div style="display:flex;flex-direction:column" class="'.$row['subject'].' '.$row["module"].'">
+                <iframe width="250" height="200" src="./'.$row["files"].'"> 
 			</iframe>
 			<div style="display:flex;margin-left:1rem">
-			<a href="./assets/sih.pdf" target="_blank" download><button class="down">Download</button>
+			<a href="./'.$row["files"].'" target="_blank" download><button class="down">Download</button>
 			</a>
-			<a href="./assets/sih.pdf" target="_blank"><button class="down">View</button>
-			</a>
-			</div>
-			</div>
-			<div style="display:flex;flex-direction:column">
-                <iframe width="250" height="200" src="./assets/sih.pdf"> 
-			</iframe>
-			<div style="display:flex;margin-left:1rem">
-			<a href="./assets/sih.pdf" target="_blank" download><button class="down">Download</button>
-			</a>
-			<a href="./assets/sih.pdf" target="_blank"><button class="down">View</button>
+			<a href="./'.$row["files"].'" target="_blank"><button class="down">View</button>
 			</a>
 			</div>
-			</div>
-            
-
-<div style="display:flex;flex-direction:column">
-                <iframe width="250" height="200" src="./assets/sih.pdf"> 
-			</iframe>
-			<div style="display:flex;margin-left:1rem">
-			<a href="./assets/sih.pdf" target="_blank" download><button class="down">Download</button>
-			</a>
-			<a href="./assets/sih.pdf" target="_blank"><button class="down">View</button>
-			</a>
-			</div>
-			</div>
-			<div style="display:flex;flex-direction:column">
-                <iframe width="250" height="200" src="./assets/sih.pdf"> 
-			</iframe>
-			<div style="display:flex;margin-left:1rem">
-			<a href="./assets/sih.pdf" target="_blank" download><button class="down">Download</button>
-			</a>
-			<a href="./assets/sih.pdf" target="_blank"><button class="down">View</button>
-			</a>
-			</div>
-			</div>
-		
+			</div> 
+			';
+		}
+		?>		
 		</section>
                 <h3 class="droptitle videolinktitle" onclick="$('.arryou').css('transform','rotate(180deg)');$('.videolink').slideToggle()"><span style="flex:90%">YouTube Videos </span><img src="./images/arrow.png" class="arrow arryou"></h3>
             <section class="videolink" >
-                <iframe width="250" height="200" src="https://www.youtube.com/embed/wFjEZw-FF_w">
-                </iframe>
-                <iframe width="250" height="200" src="https://www.youtube.com/embed/wFjEZw-FF_w">
-                </iframe>
-                <iframe width="250" height="200" src="https://www.youtube.com/embed/wFjEZw-FF_w">
-                </iframe>
-<iframe width="250" height="200" src="https://www.youtube.com/embed/wFjEZw-FF_w">
-                </iframe>
+                
+
+		<?php
+		$res = mysqli_query($con,$sql);
+		while($row= mysqli_fetch_assoc($res)) {
+			echo '
+                <iframe width="250" height="200" src="'.$row["youtube"].'" class="'.$row['subject'].' '.$row["module"].'">
+			</iframe>';
+			} ?>
+
+
             </section>
                 <h3 class="droptitle weblinktitle" onclick="$('.arrdrop').css('transform','rotate(180deg)');$('.weblink').slideToggle()"><span style="flex:90%">Reference Links</span><img src="./images/arrow.png" class="arrow arrdrop"></h3>
             <section class="weblink " >
-		    
-                <a href="https://www.w3schools.com" target="_blank" class="ref"><img src="./images/link.png" width="16rem">www.w3schools.com</a>
+
+		<?php
+		$resu = mysqli_query($con,$sql);
+		while($row= mysqli_fetch_assoc($resu)) {
+			echo '
+                <a href="'.$row["weblink"].'" target="_blank" class="ref '.$row['subject'].' '.$row["module"].'"><img src="./images/link.png" width="16rem">'.$row["weblink"].'</a>
+		';
+		}
+		?>
+
             </section>
 		</section>
         </main>
         <footer>
             &COPY; Designed & Developed By&nbsp;<i>RAHUL VERMAN, FAIZAN AHMAD & SHASHI BAVAN.</i>
          </footer>
+	<?php
+}
+else
+echo "Access Denied. Login";
+?>
     </body>
 </html>
